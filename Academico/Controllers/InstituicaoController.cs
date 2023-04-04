@@ -64,6 +64,7 @@ namespace Academico.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete(Instituicao instituicao)
         {
             instituicoes.Remove(instituicoes.Where(i => i.Id == instituicao.Id).First());
